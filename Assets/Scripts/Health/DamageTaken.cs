@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class DamageTaken : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static float health;
+    public static float maxHealth = 100f;
+
     void Start()
     {
-        
+        health = maxHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
