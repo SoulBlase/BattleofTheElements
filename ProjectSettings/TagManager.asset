@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Player 1
+  - Player 2
+  - Attack Hit 10
+  - Hit Boxes
+  - Torso Hitboxes
+  - Head Hitboxes
+  - Legs Hitboxes
   layers:
   - Default
   - TransparentFX
