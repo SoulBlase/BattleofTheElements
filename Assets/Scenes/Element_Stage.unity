@@ -226,6 +226,10 @@ PrefabInstance:
       propertyPath: m_BlendShapeWeights.Array.size
       value: 63
       objectReference: {fileID: 0}
+    - target: {fileID: -3553183048385574807, guid: 803f39f320df370498b1d8e5f5094b0e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 803f39f320df370498b1d8e5f5094b0e, type: 3}
       propertyPath: m_Name
       value: Blaze_Heart (1)
@@ -252,6 +256,16 @@ Transform:
 --- !u!4 &385416883 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7399816624496865512, guid: 803f39f320df370498b1d8e5f5094b0e, type: 3}
+  m_PrefabInstance: {fileID: 385416881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &385416884 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1316914853282759382, guid: 803f39f320df370498b1d8e5f5094b0e, type: 3}
+  m_PrefabInstance: {fileID: 385416881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &385416885 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -1525014076315092072, guid: 803f39f320df370498b1d8e5f5094b0e, type: 3}
   m_PrefabInstance: {fileID: 385416881}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &516038811
@@ -574,6 +588,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 803f39f320df370498b1d8e5f5094b0e, type: 3}
+--- !u!1 &664421445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 664421446}
+  - component: {fileID: 664421447}
+  m_Layer: 0
+  m_Name: BodyCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &664421446
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664421445}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0009, y: -0.0109, z: 0.2875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 385416884}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &664421447
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664421445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.12}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &869715965
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +865,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb76486732cdd5f40a5d0b5331a2d6ee, type: 3}
+--- !u!1 &1286873275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1286873276}
+  m_Layer: 0
+  m_Name: LegsCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1286873276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286873275}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 385416885}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1412714494 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 803f39f320df370498b1d8e5f5094b0e, type: 3}
