@@ -12,6 +12,8 @@ public class DamageTaken : MonoBehaviour
     public static float HealthP2;
     public static float maxHealthP2 = 100f;
 
+    //public string fighterName;
+
     void Start()
     {
         HealthP1 = maxHealthP1;
@@ -22,5 +24,13 @@ public class DamageTaken : MonoBehaviour
     {
         //Tells how much health is in player 1 and two
         Debug.Log("Player 1 Health: " + HealthP1 + "Player 2 Health: " + HealthP2);
+    }
+
+    public float healthPercent
+    {
+        get
+        {
+          return HealthP1 / maxHealthP1;
+        }
     }
 }

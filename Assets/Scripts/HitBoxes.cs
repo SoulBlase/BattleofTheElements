@@ -24,6 +24,11 @@ public class HitBoxes : MonoBehaviour
 
     private bool Blocking = false;
 
+    public string punchName;
+    public float damage;
+
+    public Player1Controller owner;
+
     void Start()
     {
         //this.GetComponent<BoxCollider2D>();
@@ -39,6 +44,12 @@ public class HitBoxes : MonoBehaviour
         if(HitCol.gameObject.tag == "Head Hitboxes" && Blocking == false)
         {
             HeadHealthDamage -= DamageTaken.HealthP1;
+        }
+
+        Player1Controller somebody = HitCol.gameObject.GetComponent<Player1Controller>();
+        if(somebody != null && somebody != owner)
+        {
+            Debug.Log("I hit" + somebody + "with" + punchName);
         }
     }
 }
