@@ -43,11 +43,11 @@ public class Player1Controller : MonoBehaviour
 
         if (Input.GetAxis("Horizontal") < -0.1)
         {
-            animate.SetBool("Walk", true);
+            animate.SetBool("Walk_Back", true);
         }
         else
         {
-            animate.SetBool("Walk", false);
+            animate.SetBool("Walk_Back", false);
         }
 
         if (Input.GetKeyDown(KeyCode.F))
@@ -69,10 +69,6 @@ public class Player1Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetButtonDown("Horizontal"))
-        {
-            player.GetComponent<Animator>().Play("Walking");
-        }*/
 
         animate.SetFloat("Health", playerHealth.healthPercent);
         if (opponent != null)
@@ -89,6 +85,14 @@ public class Player1Controller : MonoBehaviour
             UpdateHumanInput();
         }
     }
+
+    /*public bool attacking()
+    {
+        get
+        {
+            return currentState = States;
+        }
+    }*/
 
     public Rigidbody body
     {
