@@ -15,11 +15,31 @@ MonoBehaviour:
   Path: FMODAsset/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637681725657190545
+  lastModified: 637694934015411099
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 700
+    Value: 806
+  Exists: 1
+--- !u!114 &-2687340563771415466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Hit and Grunts/Fight Sounds
+  m_EditorClassIdentifier: 
+  Name: Fight Sounds
+  Min: 1
+  Max: 10
+  Default: 2
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -36,13 +56,14 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: -9135086813253042407}
   - {fileID: 585461777748580721}
-  EditorEvents: []
+  EditorEvents:
+  - {fileID: 6065399310879358122}
   EditorParameters: []
   MasterBanks:
   - {fileID: 585461777748580721}
   StringsBanks:
   - {fileID: -9135086813253042407}
-  stringsBankWriteTime: 637681725657190545
+  stringsBankWriteTime: 637694934015411099
   cacheVersion: 6
 --- !u!114 &585461777748580721
 MonoBehaviour:
@@ -59,7 +80,51 @@ MonoBehaviour:
   Path: FMODAsset/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637681725657184788
+  lastModified: 637694934015390907
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &6065399310879358122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Hit and Grunts
+  m_EditorClassIdentifier: 
+  Path: event:/Hit and Grunts
+  guid: 7054be7314f27749a7da97469af26ec6
+  Banks:
+  - {fileID: 585461777748580721}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2687340563771415466}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7415671716093600550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Hit and Grunts/Fight Sounds
+  m_EditorClassIdentifier: 
+  Name: Fight Sounds
+  Min: 1
+  Max: 10
+  Default: 2
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
