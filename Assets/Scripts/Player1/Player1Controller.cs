@@ -14,6 +14,7 @@ public class Player1Controller : MonoBehaviour
     public string figherName;
 
     public PlayerType character;
+    public FighterStates currentState = FighterStates.Idle;
 
     private Rigidbody myBody;
     protected Animator animate;
@@ -50,10 +51,25 @@ public class Player1Controller : MonoBehaviour
             animate.SetBool("Walk_Back", false);
         }
 
+        if(Input.GetAxis("Vertical") < -0.1)
+        {
+            animate.SetBool("Crouch", true);
+        }
+        else
+        {
+            animate.SetBool("Crouch", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            animate.SetTrigger("Jump");
+            Debug.Log("Jump works");
+        }
+
         if (Input.GetKeyDown(KeyCode.F))
         {
             animate.SetTrigger("Punch");
-            Debug.Log("Animation works");
+            Debug.Log("Punch works");
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -98,7 +114,7 @@ public class Player1Controller : MonoBehaviour
     {
         get
         {
-            return this.myBody;
+            return myBody;
         }
     }
 }
