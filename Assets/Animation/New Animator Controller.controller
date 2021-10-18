@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   behaviorState: 6
-  horizontalForce: -50
+  horizontalForce: 0
   verticalForce: 0
 --- !u!1101 &-8492071798491326726
 AnimatorStateTransition:

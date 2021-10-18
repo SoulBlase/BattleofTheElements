@@ -12,6 +12,8 @@ public class DamageTaken : MonoBehaviour
     public static float HealthP2;
     public static float maxHealthP2 = 100f;
 
+    //[RequireComponent(typeof(Animator))]
+
     //public string fighterName;
 
     void Start()
@@ -31,6 +33,24 @@ public class DamageTaken : MonoBehaviour
         get
         {
           return HealthP1 / maxHealthP1;
+        }
+    }
+
+    public virtual void hurt(float damage)
+    {
+        if(HealthP1 >= damage)
+        {
+            HealthP1 -= damage;
+        }
+        else
+        {
+            HealthP1 = 0;
+        }
+
+        if(HealthP1 > 0)
+        {
+            Animator a = GetComponent<Animator>();
+            a.SetTrigger("Hit");
         }
     }
 }

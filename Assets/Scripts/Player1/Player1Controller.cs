@@ -102,13 +102,14 @@ public class Player1Controller : MonoBehaviour
         }
     }
 
-    /*public bool attacking()
+    public bool attacking
     {
         get
         {
-            return currentState = States;
+            return currentState == FighterStates.Attack;
         }
-    }*/
+
+    }
 
     public Rigidbody body
     {
