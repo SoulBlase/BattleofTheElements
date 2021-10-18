@@ -39,14 +39,20 @@ public class HitBoxes : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D HitCol)
+    void OnTriggerEnter(Collider HitCol)
     {
-        if(HitCol.gameObject.tag == "Head Hitboxes" && Blocking == false)
+
+  
+        if (HitCol.gameObject.tag == "Head Hitboxes" && Blocking == false)
         {
             HeadHealthDamage -= DamageTaken.HealthP1;
         }
 
-        Player1Controller somebody = HitCol.gameObject.GetComponent<Player1Controller>();
+
+
+        Player1Controller somebody = HitCol.gameObject.GetComponentInParent<Player1Controller>();
+
+        print("This is the player controller: " + somebody.name);
         if(somebody != null && somebody != owner)
         {
             Debug.Log("I hit" + somebody + "with" + punchName);

@@ -13,10 +13,11 @@ public class FighterStateBehavior : StateMachineBehaviour
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Debug.Log("Entered State: " + animator.name);
         if(fighter == null)
         {
-            fighter = animator.gameObject.GetComponent<Player1Controller>();
-            Debug.Log("Object Reference?");
+            fighter = animator.gameObject.GetComponentInParent<Player1Controller>();
+            Debug.Log(fighter.name);
         }
 
         fighter.currentState = behaviorState;
