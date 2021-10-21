@@ -5,14 +5,12 @@ using UnityEngine;
 public class Player1Controller : MonoBehaviour
 {
     public GameObject Punch;
-    //public GameObject Body;
-    //public GameObject Kick;
-    //private bool HitActive = false;
-    //private float HitTime;
+    public GameObject Body;
+    public GameObject Kick;
     [Range(0f, 10f)]
-    public float HitPeak1;
+    public float[] HitPeak1;
     [Range(0f, 10f)]
-    public float HitPeak2;
+    public float[] HitPeak2;
     
     public enum PlayerType
     {
@@ -21,12 +19,12 @@ public class Player1Controller : MonoBehaviour
 
     public GameObject player;
 
-    public string figherName;
+    public string fighterName;
 
     public PlayerType character;
 
     private Rigidbody myBody;
-    //protected Animator //animate;
+    protected Animator animate;
 
     public DamageTaken playerHealth;
 
@@ -35,53 +33,70 @@ public class Player1Controller : MonoBehaviour
     void Start()
     {
         myBody = GetComponent<Rigidbody>();
-        //animate = player.GetComponent<Animator>();
+        animate = player.GetComponent<Animator>();
     }
 
-    private IEnumerator HitTiming()
+    //Hit Timings
+    private IEnumerator HitTimingPunch()
     {
-        yield return new WaitForSeconds(HitPeak1);
+        yield return new WaitForSeconds(HitPeak1[0]);
         Punch.SetActive(true);
-        yield return new WaitForSeconds(HitPeak2);
+        yield return new WaitForSeconds(HitPeak2[0]);
         Punch.SetActive(false);
+    }
+
+    private IEnumerator HitTimingBody()
+    {
+        yield return new WaitForSeconds(HitPeak1[1]);
+        Body.SetActive(true);
+        yield return new WaitForSeconds(HitPeak2[1]);
+        Body.SetActive(false);
+    }
+
+    private IEnumerator HitTimingKick()
+    {
+        yield return new WaitForSeconds(HitPeak1[2]);
+        Kick.SetActive(true);
+        yield return new WaitForSeconds(HitPeak2[2]);
+        Kick.SetActive(false);
     }
 
     public void FixedUpdateHumanInput()
     {
         if (Input.GetAxis("Horizontal") > 0.1)
         {
-            //animate.SetBool("Walk", true);
+            animate.SetBool("Walk", true);
             Debug.Log("Walking Works");
         }
         else
         {
-            //animate.SetBool("Walk", false);
+            animate.SetBool("Walk", false);
         }
 
         if (Input.GetAxis("Horizontal") < -0.1)
         {
-            //animate.SetBool("Walk", true);
+            animate.SetBool("Walk", true);
         }
         else
         {
-            //animate.SetBool("Walk", false);
+            animate.SetBool("Walk", false);
         }
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            //animate.SetTrigger("Punch");
-            StartCoroutine(HitTiming());
+            animate.SetTrigger("Punch");
+            StartCoroutine(HitTimingPunch());
             Debug.Log("Animation works");
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //animate.SetBool("Block", true);
+            animate.SetBool("Block", true);
             Debug.Log("Block works");
         }
         else
         {
-            //animate.SetBool("Block", false);
+            animate.SetBool("Block", false);
         }
     }
 
@@ -92,14 +107,14 @@ public class Player1Controller : MonoBehaviour
             player.GetComponent<Animator>().Play("Walking");
         }*/
 
-        //animate.SetFloat("Health", playerHealth.healthPercent);
+        animate.SetFloat("Health", playerHealth.healthPercent);
         if (opponent != null)
         {
-            //animate.SetFloat("Opponent_Health", opponent.playerHealth.healthPercent);
+            animate.SetFloat("Opponent_Health", opponent.playerHealth.healthPercent);
         }
         else
         {
-            //animate.SetFloat("Opponent_Health", 1);
+            animate.SetFloat("Opponent_Health", 1);
         }
 
         if (character == PlayerType.Human)
@@ -107,10 +122,7 @@ public class Player1Controller : MonoBehaviour
             FixedUpdateHumanInput();
         }
 
-        if(HitPeak1 >= HitPeak2)
-        {
-            HitPeak1 = HitPeak2 - 1f;
-        }
+        StayBetweenHit();
     }
 
     public Rigidbody body
@@ -118,6 +130,23 @@ public class Player1Controller : MonoBehaviour
         get
         {
             return this.myBody;
+        }
+    }
+
+    //So the HitPeak stay in between
+    private void StayBetweenHit()
+    {
+        if(HitPeak1[0] >= HitPeak2[0])
+        {
+            HitPeak1[0] = HitPeak2[0] - 1f;
+        }
+        if(HitPeak1[1] >= HitPeak2[1])
+        {
+            HitPeak1[1] = HitPeak2[1] - 1f;
+        }
+        if(HitPeak1[2] >= HitPeak2[2])
+        {
+            HitPeak1[2] = HitPeak2[2] - 1f;
         }
     }
 }

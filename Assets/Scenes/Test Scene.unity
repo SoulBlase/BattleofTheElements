@@ -771,10 +771,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Punch: {fileID: 1817617700}
-  HitPeak1: 0.5
-  HitPeak2: 1
+  Body: {fileID: 0}
+  Kick: {fileID: 0}
+  HitPeak1:
+  - 0.25
+  - 0.25
+  - 0.25
+  HitPeak2:
+  - 0.35
+  - 0.35
+  - 0.35
   player: {fileID: 452384487}
-  figherName: Saint Coolman
+  fighterName: 
   character: 0
   playerHealth: {fileID: 387561466}
   opponent: {fileID: 0}
