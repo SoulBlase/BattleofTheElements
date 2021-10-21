@@ -22,8 +22,8 @@ public class DamageTaken : MonoBehaviour
 
     void Update()
     {
-        //Tells how much health is in player 1 and two
-        Debug.Log("Player 1 Health: " + HealthP1 + "Player 2 Health: " + HealthP2);
+        //Tells how much health is in player 1 and 2
+        //Debug.Log("Player 1 Health: " + HealthP1 + " | Player 2 Health: " + HealthP2);
     }
 
     public float healthPercent
