@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9135086813253042407
+--- !u!114 &-6556202282532894959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15,57 +15,13 @@ MonoBehaviour:
   Path: FMODAsset/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637694934015411099
+  lastModified: 637699961631267280
   LoadResult: 0
   FileSizes:
   - Name: 
     Value: 806
   Exists: 1
---- !u!114 &-2687340563771415466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Hit and Grunts/Fight Sounds
-  m_EditorClassIdentifier: 
-  Name: Fight Sounds
-  Min: 1
-  Max: 10
-  Default: 2
-  ID:
-    data1: 0
-    data2: 0
-  Exists: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -9135086813253042407}
-  - {fileID: 585461777748580721}
-  EditorEvents:
-  - {fileID: 6065399310879358122}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 585461777748580721}
-  StringsBanks:
-  - {fileID: -9135086813253042407}
-  stringsBankWriteTime: 637694934015411099
-  cacheVersion: 6
---- !u!114 &585461777748580721
+--- !u!114 &-1054633595234004487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,11 +36,35 @@ MonoBehaviour:
   Path: FMODAsset/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637694934015390907
+  lastModified: 637699961631267280
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &6065399310879358122
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -6556202282532894959}
+  - {fileID: -1054633595234004487}
+  EditorEvents:
+  - {fileID: 5169371819458826333}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -1054633595234004487}
+  StringsBanks:
+  - {fileID: -6556202282532894959}
+  stringsBankWriteTime: 637699961631267280
+  cacheVersion: 6
+--- !u!114 &5169371819458826333
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,16 +79,16 @@ MonoBehaviour:
   Path: event:/Hit and Grunts
   guid: 7054be7314f27749a7da97469af26ec6
   Banks:
-  - {fileID: 585461777748580721}
+  - {fileID: -1054633595234004487}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -2687340563771415466}
+  - {fileID: 8434138982078133867}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &7415671716093600550
+--- !u!114 &8434138982078133867
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,4 +107,4 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 0
+  Exists: 1

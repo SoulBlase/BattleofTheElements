@@ -22,6 +22,7 @@ public class Player1Controller : MonoBehaviour
     public string fighterName;
 
     public PlayerType character;
+    public FighterStates currentState = FighterStates.Idle;
 
     private Rigidbody myBody;
     protected Animator animate;
@@ -81,12 +82,36 @@ public class Player1Controller : MonoBehaviour
         {
             animate.SetBool("Walk", false);
         }
+        else
+        {
+            animate.SetBool("Walk_Back", false);
+        }
+
+        if(Input.GetAxis("Vertical") < -0.1)
+        {
+            animate.SetBool("Crouch", true);
+        }
+        else
+        {
+            animate.SetBool("Crouch", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            animate.SetTrigger("Jump");
+            Debug.Log("Jump works");
+>>>>>>> main
+        }
 
         if (Input.GetKeyDown(KeyCode.F))
         {
             animate.SetTrigger("Punch");
             StartCoroutine(HitTimingPunch());
             Debug.Log("Animation works");
+=======
+            animate.SetTrigger("Punch");
+            Debug.Log("Punch works");
+>>>>>>> main
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -102,10 +127,6 @@ public class Player1Controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        /*if (Input.GetButtonDown("Horizontal"))
-        {
-            player.GetComponent<Animator>().Play("Walking");
-        }*/
 
         animate.SetFloat("Health", playerHealth.healthPercent);
         if (opponent != null)
@@ -125,11 +146,20 @@ public class Player1Controller : MonoBehaviour
         StayBetweenHit();
     }
 
+    public bool attacking
+    {
+        get
+        {
+            return currentState == FighterStates.Attack;
+        }
+
+    }
+
     public Rigidbody body
     {
         get
         {
-            return this.myBody;
+            return myBody;
         }
     }
 
