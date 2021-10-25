@@ -80,10 +80,6 @@ public class Player1Controller : MonoBehaviour
         }
         else
         {
-            animate.SetBool("Walk", false);
-        }
-        else
-        {
             animate.SetBool("Walk_Back", false);
         }
 
@@ -100,7 +96,7 @@ public class Player1Controller : MonoBehaviour
         {
             animate.SetTrigger("Jump");
             Debug.Log("Jump works");
->>>>>>> main
+
         }
 
         if (Input.GetKeyDown(KeyCode.F))
@@ -108,10 +104,10 @@ public class Player1Controller : MonoBehaviour
             animate.SetTrigger("Punch");
             StartCoroutine(HitTimingPunch());
             Debug.Log("Animation works");
-=======
+
             animate.SetTrigger("Punch");
             Debug.Log("Punch works");
->>>>>>> main
+
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
