@@ -8,9 +8,13 @@ TagManager:
   - Player 2
   - Attack Hit 10
   - Hit Boxes
-  - Torso Hitboxes
-  - Head Hitboxes
-  - Legs Hitboxes
+  - Attack Boxes
+  - P1 Head Hitboxes
+  - P1 Torso Hitboxes
+  - P1 Legs Hitboxes
+  - P2 Head Hitboxes
+  - P2 Torso Hitboxes
+  - P2 Legs Hitboxes
   layers:
   - Default
   - TransparentFX

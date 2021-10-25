@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 15345679}
   m_Layer: 0
   m_Name: Legs Hitbox
-  m_TagString: Legs Hitboxes
+  m_TagString: P2 Legs Hitboxes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,7 +164,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 122266455}
   m_Layer: 0
   m_Name: Head Hitbox
-  m_TagString: Head Hitboxes
+  m_TagString: P1 Head Hitboxes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,7 +221,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 282877799}
   m_Layer: 0
   m_Name: Head Hitbox
-  m_TagString: Head Hitboxes
+  m_TagString: P2 Head Hitboxes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -374,7 +374,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -492,7 +492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 387561464}
-  - component: {fileID: 387561465}
+  - component: {fileID: 387561466}
   m_Layer: 0
   m_Name: Players
   m_TagString: Untagged
@@ -516,7 +516,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &387561465
+--- !u!114 &387561466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -525,18 +525,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 387561463}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: becdaadf1ec3ba04e8cdcb1034472675, type: 3}
+  m_Script: {fileID: 11500000, guid: b2a0585594ae41b41abc3891102c94c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeadCollider1: {fileID: 0}
-  TorsoCollider1: {fileID: 0}
-  LegsCollider1: {fileID: 0}
-  HeadCollider2: {fileID: 0}
-  TorsoCollider2: {fileID: 0}
-  LegsCollider2: {fileID: 0}
-  HeadHealthDamage: 0
-  TorsoHealthDamage: 0
-  LegsHealthDamage: 0
 --- !u!1 &425551594
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +539,7 @@ GameObject:
   - component: {fileID: 425551595}
   m_Layer: 0
   m_Name: Player 1 Hitboxes
-  m_TagString: Untagged
+  m_TagString: Hit Boxes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -580,13 +571,15 @@ GameObject:
   m_Component:
   - component: {fileID: 431317800}
   - component: {fileID: 431317801}
+  - component: {fileID: 431317803}
+  - component: {fileID: 431317802}
   m_Layer: 0
   m_Name: Body Attackbox 10
   m_TagString: Attack Hit 10
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &431317800
 Transform:
   m_ObjectHideFlags: 0
@@ -611,7 +604,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -627,6 +620,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &431317802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431317799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: becdaadf1ec3ba04e8cdcb1034472675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeadHealthDamage: 0
+  TorsoHealthDamage: 0
+  LegsHealthDamage: 0
+  punchName: 
+  damage: 0
+  owner: {fileID: 0}
+--- !u!50 &431317803
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431317799}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &452384487
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,7 +674,7 @@ GameObject:
   - component: {fileID: 452384492}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: Player 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -735,9 +767,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 452384487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2a0585594ae41b41abc3891102c94c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e1bc6d55f0f6be4db3775ebfe07461f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Punch: {fileID: 1817617700}
+  Body: {fileID: 0}
+  Kick: {fileID: 0}
+  HitPeak1:
+  - 0.25
+  - 0.25
+  - 0.25
+  HitPeak2:
+  - 0.35
+  - 0.35
+  - 0.35
+  player: {fileID: 452384487}
+  fighterName: 
+  character: 0
+  playerHealth: {fileID: 387561466}
+  opponent: {fileID: 0}
 --- !u!1 &908797135
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,7 +798,7 @@ GameObject:
   - component: {fileID: 908797137}
   m_Layer: 0
   m_Name: Torso Hitbox
-  m_TagString: Torso Hitboxes
+  m_TagString: P1 Torso Hitboxes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -779,7 +827,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -807,7 +855,6 @@ GameObject:
   - component: {fileID: 1153422615}
   - component: {fileID: 1153422614}
   - component: {fileID: 1153422618}
-  - component: {fileID: 1153422617}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -880,29 +927,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1153422617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153422613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: 
-  PlayEvent: 1
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
 --- !u!114 &1153422618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -927,13 +951,15 @@ GameObject:
   m_Component:
   - component: {fileID: 1281772394}
   - component: {fileID: 1281772395}
+  - component: {fileID: 1281772397}
+  - component: {fileID: 1281772396}
   m_Layer: 0
-  m_Name: Legs Attackbox 10
+  m_Name: Kick Attackbox 10
   m_TagString: Attack Hit 10
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1281772394
 Transform:
   m_ObjectHideFlags: 0
@@ -958,7 +984,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -974,6 +1000,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &1281772396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281772393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: becdaadf1ec3ba04e8cdcb1034472675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeadHealthDamage: 10
+  TorsoHealthDamage: 10
+  LegsHealthDamage: 10
+  punchName: 
+  damage: 0
+  owner: {fileID: 0}
+--- !u!50 &1281772397
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281772393}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1545238745
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,7 +1053,7 @@ GameObject:
   - component: {fileID: 1545238747}
   m_Layer: 0
   m_Name: Player 2
-  m_TagString: Untagged
+  m_TagString: Player 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1084,7 +1149,7 @@ GameObject:
   - component: {fileID: 1548065240}
   m_Layer: 0
   m_Name: Legs Hitbox
-  m_TagString: Legs Hitboxes
+  m_TagString: P1 Legs Hitboxes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1113,7 +1178,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1139,13 +1204,15 @@ GameObject:
   m_Component:
   - component: {fileID: 1554425167}
   - component: {fileID: 1554425168}
+  - component: {fileID: 1554425170}
+  - component: {fileID: 1554425169}
   m_Layer: 0
   m_Name: Punch Attackbox 10
   m_TagString: Attack Hit 10
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1554425167
 Transform:
   m_ObjectHideFlags: 0
@@ -1170,7 +1237,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1186,6 +1253,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &1554425169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554425166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: becdaadf1ec3ba04e8cdcb1034472675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeadHealthDamage: 30.9
+  TorsoHealthDamage: 34.6
+  LegsHealthDamage: 5.8
+  punchName: 
+  damage: 0
+  owner: {fileID: 0}
+--- !u!50 &1554425170
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554425166}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1660394492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,13 +1302,15 @@ GameObject:
   m_Component:
   - component: {fileID: 1660394493}
   - component: {fileID: 1660394494}
+  - component: {fileID: 1660394496}
+  - component: {fileID: 1660394495}
   m_Layer: 0
   m_Name: Body Attackbox 10
   m_TagString: Attack Hit 10
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1660394493
 Transform:
   m_ObjectHideFlags: 0
@@ -1227,7 +1335,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1243,6 +1351,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &1660394495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660394492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: becdaadf1ec3ba04e8cdcb1034472675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeadHealthDamage: 10
+  TorsoHealthDamage: 10
+  LegsHealthDamage: 10
+  punchName: 
+  damage: 0
+  owner: {fileID: 0}
+--- !u!50 &1660394496
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660394492}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1774493850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,7 +1401,7 @@ GameObject:
   - component: {fileID: 1774493851}
   m_Layer: 0
   m_Name: Player 1 Attackboxes
-  m_TagString: Untagged
+  m_TagString: Attack Boxes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1286,13 +1433,15 @@ GameObject:
   m_Component:
   - component: {fileID: 1817617701}
   - component: {fileID: 1817617702}
+  - component: {fileID: 1817617704}
+  - component: {fileID: 1817617703}
   m_Layer: 0
   m_Name: Punch Attackbox 10
   m_TagString: Attack Hit 10
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1817617701
 Transform:
   m_ObjectHideFlags: 0
@@ -1317,7 +1466,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1333,6 +1482,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &1817617703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817617700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: becdaadf1ec3ba04e8cdcb1034472675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeadHealthDamage: 30
+  TorsoHealthDamage: 20
+  LegsHealthDamage: 10
+  punchName: 
+  damage: 0
+  owner: {fileID: 0}
+--- !u!50 &1817617704
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817617700}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &2048141639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,13 +1531,15 @@ GameObject:
   m_Component:
   - component: {fileID: 2048141640}
   - component: {fileID: 2048141641}
+  - component: {fileID: 2048141643}
+  - component: {fileID: 2048141642}
   m_Layer: 0
-  m_Name: Legs Attackbox 10
+  m_Name: Kick Attackbox 10
   m_TagString: Attack Hit 10
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2048141640
 Transform:
   m_ObjectHideFlags: 0
@@ -1374,7 +1564,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1390,6 +1580,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &2048141642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048141639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: becdaadf1ec3ba04e8cdcb1034472675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeadHealthDamage: 0
+  TorsoHealthDamage: 0
+  LegsHealthDamage: 0
+  punchName: 
+  damage: 0
+  owner: {fileID: 0}
+--- !u!50 &2048141643
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048141639}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &2111450130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,7 +1630,7 @@ GameObject:
   - component: {fileID: 2111450131}
   m_Layer: 0
   m_Name: Player 2 Attackboxes
-  m_TagString: Untagged
+  m_TagString: Attack Boxes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1435,7 +1664,7 @@ GameObject:
   - component: {fileID: 2119624996}
   m_Layer: 0
   m_Name: Torso Hitbox
-  m_TagString: Torso Hitboxes
+  m_TagString: P2 Torso Hitboxes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1464,7 +1693,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1491,7 +1720,7 @@ GameObject:
   - component: {fileID: 2125092434}
   m_Layer: 0
   m_Name: Player 2 Hitboxes
-  m_TagString: Untagged
+  m_TagString: Hit Boxes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
