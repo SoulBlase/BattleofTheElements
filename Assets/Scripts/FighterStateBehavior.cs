@@ -21,13 +21,13 @@ public class FighterStateBehavior : StateMachineBehaviour
         }
 
         fighter.currentState = behaviorState;
-        fighter.body.AddRelativeForce(new Vector3(0, verticalForce, 0));
+        //fighter.body.AddRelativeForce(new Vector3(0, verticalForce, 0));
         Debug.Log("Does the vertical force code work?");
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        fighter.body.AddRelativeForce(new Vector3(0, 0, horizontalForce));
+        //fighter.body.AddRelativeForce(new Vector3(0, 0, horizontalForce));
         Debug.Log("Does the horizontal force code work?");
     }
 

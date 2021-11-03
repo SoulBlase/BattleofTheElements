@@ -17,6 +17,12 @@ public class Player1Controller : MonoBehaviour
         Human, AI
     }
 
+    //Movement
+    public float speed;
+    public float jump;
+    private float direction;
+    float moveVelocity;
+
     public GameObject player;
 
     public string fighterName;
@@ -64,7 +70,7 @@ public class Player1Controller : MonoBehaviour
 
     public void FixedUpdateHumanInput()
     {
-        if (Input.GetAxis("Horizontal") > 0.1)
+        if (direction> 0)
         {
             animate.SetBool("Walk", true);
             Debug.Log("Walking Works");
@@ -74,7 +80,7 @@ public class Player1Controller : MonoBehaviour
             animate.SetBool("Walk", false);
         }
 
-        if (Input.GetAxis("Horizontal") < -0.1)
+        if (direction < 0)
         {
             animate.SetBool("Walk_Back", true);
         }
@@ -123,6 +129,8 @@ public class Player1Controller : MonoBehaviour
 
     void FixedUpdate()
     {
+        direction = Input.GetAxis("Horizonal");
+        moveVelocity = speed * direction * Time.deltaTime;
 
         animate.SetFloat("Health", playerHealth.healthPercent);
         if (opponent != null)
@@ -139,6 +147,12 @@ public class Player1Controller : MonoBehaviour
             FixedUpdateHumanInput();
         }
 
+        //animate.SetFloat("velocityX", moveVelocity);
+        //animate.SetFloat("velocityY", moveVelocity);
+        myBody.velocity = new Vector3(moveVelocity, GetComponent<Rigidbody>().velocity.y);
+
+        //myBody.velocity
+
         StayBetweenHit();
     }
 
@@ -151,13 +165,7 @@ public class Player1Controller : MonoBehaviour
 
     }
 
-    public Rigidbody body
-    {
-        get
-        {
-            return this.myBody;
-        }
-    }
+    
 
     //So the HitPeak stay in between
     private void StayBetweenHit()
