@@ -76,7 +76,7 @@ public class Player1Controller : MonoBehaviour
 
         if (Input.GetAxis("Horizontal") < -0.1)
         {
-            animate.SetBool("Walk", true);
+            animate.SetBool("Walk_Back", true);
         }
         else
         {
@@ -142,7 +142,7 @@ public class Player1Controller : MonoBehaviour
         StayBetweenHit();
     }
 
-    public bool attacking
+    public bool Attacking
     {
         get
         {
@@ -155,7 +155,7 @@ public class Player1Controller : MonoBehaviour
     {
         get
         {
-            return myBody;
+            return this.myBody;
         }
     }
 
