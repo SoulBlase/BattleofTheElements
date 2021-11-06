@@ -15,13 +15,37 @@ MonoBehaviour:
   Path: FMODAsset/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< Updated upstream
   lastModified: 637699961631267280
+=======
+  lastModified: 637701022748893722
+>>>>>>> Stashed changes
   LoadResult: 0
   FileSizes:
   - Name: 
     Value: 806
   Exists: 1
 --- !u!114 &-5666436603958147111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Hit and Grunts/Fight Sounds
+  m_EditorClassIdentifier: 
+  Name: Fight Sounds
+  Min: 1
+  Max: 10
+  Default: 2
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-5020130384012611314
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,7 +80,11 @@ MonoBehaviour:
   Path: FMODAsset/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< Updated upstream
   lastModified: 637699961631267280
+=======
+  lastModified: 637701022748943578
+>>>>>>> Stashed changes
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -102,7 +130,11 @@ MonoBehaviour:
   - {fileID: -1054633595234004487}
   StringsBanks:
   - {fileID: -6556202282532894959}
+<<<<<<< Updated upstream
   stringsBankWriteTime: 637699961631267280
+=======
+  stringsBankWriteTime: 637701022748893722
+>>>>>>> Stashed changes
   cacheVersion: 6
 --- !u!114 &5169371819458826333
 MonoBehaviour:
@@ -124,7 +156,11 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
+<<<<<<< Updated upstream
   - {fileID: -364139147874146236}
+=======
+  - {fileID: -5020130384012611314}
+>>>>>>> Stashed changes
   MinDistance: 1
   MaxDistance: 20
   Length: 0
