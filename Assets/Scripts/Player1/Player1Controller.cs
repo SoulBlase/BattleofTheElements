@@ -7,10 +7,6 @@ public class Player1Controller : MonoBehaviour
     public GameObject Punch;
     public GameObject Body;
     public GameObject Kick;
-    [Range(0f, 10f)]
-    public float[] HitPeak1;
-    [Range(0f, 10f)]
-    public float[] HitPeak2;
     
     public enum PlayerType
     {
@@ -43,34 +39,9 @@ public class Player1Controller : MonoBehaviour
         animate = player.GetComponent<Animator>();
     }
 
-    //Hit Timings
-    private IEnumerator HitTimingPunch()
-    {
-        yield return new WaitForSeconds(HitPeak1[0]);
-        Punch.SetActive(true);
-        yield return new WaitForSeconds(HitPeak2[0]);
-        Punch.SetActive(false);
-    }
-
-    private IEnumerator HitTimingBody()
-    {
-        yield return new WaitForSeconds(HitPeak1[1]);
-        Body.SetActive(true);
-        yield return new WaitForSeconds(HitPeak2[1]);
-        Body.SetActive(false);
-    }
-
-    private IEnumerator HitTimingKick()
-    {
-        yield return new WaitForSeconds(HitPeak1[2]);
-        Kick.SetActive(true);
-        yield return new WaitForSeconds(HitPeak2[2]);
-        Kick.SetActive(false);
-    }
-
     public void FixedUpdateHumanInput()
     {
-        if (direction> 0)
+        if (direction > 0)
         {
             animate.SetBool("Walk", true);
             Debug.Log("Walking Works");
@@ -108,12 +79,7 @@ public class Player1Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             animate.SetTrigger("Punch");
-            StartCoroutine(HitTimingPunch());
-            Debug.Log("Animation works");
-
-            animate.SetTrigger("Punch");
             Debug.Log("Punch works");
-
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -129,8 +95,9 @@ public class Player1Controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        direction = Input.GetAxis("Horizonal");
+        direction = Input.GetAxis("Horizontal");
         moveVelocity = speed * direction * Time.deltaTime;
+        myBody.velocity = new Vector3(moveVelocity, GetComponent<Rigidbody>().velocity.y);
 
         animate.SetFloat("Health", playerHealth.healthPercent);
         if (opponent != null)
@@ -149,11 +116,7 @@ public class Player1Controller : MonoBehaviour
 
         //animate.SetFloat("velocityX", moveVelocity);
         //animate.SetFloat("velocityY", moveVelocity);
-        myBody.velocity = new Vector3(moveVelocity, GetComponent<Rigidbody>().velocity.y);
-
-        //myBody.velocity
-
-        StayBetweenHit();
+        
     }
 
     public bool Attacking
@@ -164,23 +127,5 @@ public class Player1Controller : MonoBehaviour
         }
 
     }
-
     
-
-    //So the HitPeak stay in between
-    private void StayBetweenHit()
-    {
-        if(HitPeak1[0] >= HitPeak2[0])
-        {
-            HitPeak1[0] = HitPeak2[0] - 1f;
-        }
-        if(HitPeak1[1] >= HitPeak2[1])
-        {
-            HitPeak1[1] = HitPeak2[1] - 1f;
-        }
-        if(HitPeak1[2] >= HitPeak2[2])
-        {
-            HitPeak1[2] = HitPeak2[2] - 1f;
-        }
-    }
 }

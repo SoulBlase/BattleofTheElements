@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.042174395, g: 0.0048932466, b: 0.0014694673, a: 1}
+  m_IndirectSpecularColor: {r: 0.042309143, g: 0.0048817275, b: 0.0014651825, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2819,8 +2819,8 @@ MonoBehaviour:
   Kick: {fileID: 0}
   HitPeak1: []
   HitPeak2: []
-  speed: 0
-  jump: 0
+  speed: 50
+  jump: 180
   player: {fileID: 919132149405565920}
   fighterName: Blaze
   character: 0
