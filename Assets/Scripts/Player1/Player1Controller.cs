@@ -44,7 +44,7 @@ public class Player1Controller : MonoBehaviour
         if (direction > 0)
         {
             animate.SetBool("Walk", true);
-            Debug.Log("Walking Works");
+            Debug.Log("Walking Works " + direction);
         }
         else
         {
@@ -54,6 +54,7 @@ public class Player1Controller : MonoBehaviour
         if (direction < 0)
         {
             animate.SetBool("Walk_Back", true);
+            Debug.Log(direction);
         }
         else
         {
@@ -97,7 +98,7 @@ public class Player1Controller : MonoBehaviour
     {
         direction = Input.GetAxis("Horizontal");
         moveVelocity = speed * direction * Time.deltaTime;
-        myBody.velocity = new Vector3(moveVelocity, GetComponent<Rigidbody>().velocity.y);
+        myBody.velocity = new Vector3(0, GetComponent<Rigidbody>().velocity.y, moveVelocity);
 
         animate.SetFloat("Health", playerHealth.healthPercent);
         if (opponent != null)

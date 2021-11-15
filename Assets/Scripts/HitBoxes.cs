@@ -67,7 +67,7 @@ public class HitBoxes : MonoBehaviour
 
 
 
-
+        /*
         Player1Controller somebody = HitCol.gameObject.GetComponentInParent<Player1Controller>();
 
         print("This is the player controller: " + somebody.name);
@@ -75,5 +75,6 @@ public class HitBoxes : MonoBehaviour
         {
             Debug.Log("I hit" + somebody + "with" + punchName);
         }
+        */
     }
 }
