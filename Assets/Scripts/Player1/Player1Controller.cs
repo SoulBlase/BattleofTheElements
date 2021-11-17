@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Player1Controller : MonoBehaviour
 {
-    public GameObject Punch;
-    public GameObject Body;
-    public GameObject Kick;
-    
     public enum PlayerType
     {
         Human, AI
@@ -100,7 +96,7 @@ public class Player1Controller : MonoBehaviour
         moveVelocity = speed * direction * Time.deltaTime;
         myBody.velocity = new Vector3(0, GetComponent<Rigidbody>().velocity.y, moveVelocity);
 
-        animate.SetFloat("Health", playerHealth.healthPercent);
+        //animate.SetFloat("Health", playerHealth.healthPercent);
         if (opponent != null)
         {
             animate.SetFloat("Opponent_Health", opponent.playerHealth.healthPercent);
@@ -126,7 +122,5 @@ public class Player1Controller : MonoBehaviour
         {
             return currentState == FighterStates.Attack;
         }
-
     }
-    
 }

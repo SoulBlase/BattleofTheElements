@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitBoxes : MonoBehaviour
+public class AttackBoxes : MonoBehaviour
 {
     [Header("Health Damage")]
     [Range(0f, 100f)]
@@ -27,7 +27,10 @@ public class HitBoxes : MonoBehaviour
 
     void Update()
     {
-
+        /*if(Blocking == true)
+        {
+            //
+        }*/
     }
 
     void OnTriggerEnter(Collider HitCol)
