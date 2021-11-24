@@ -52,5 +52,14 @@ public class DamageTaken : MonoBehaviour
             Animator a = GetComponent<Animator>();
             a.SetTrigger("Hit");
         }
+
+        if (HealthP2 >= damage)
+        {
+            HealthP2 -= damage;
+        }
+        else
+        {
+            HealthP2 = 0;
+        }
     }
 }

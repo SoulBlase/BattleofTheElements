@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1Controller : MonoBehaviour
+public class Player2Controller : MonoBehaviour
 {
     public enum PlayerType
     {
@@ -27,7 +27,7 @@ public class Player1Controller : MonoBehaviour
 
     public DamageTaken playerHealth;
 
-    public Player1Controller opponent;
+    public Player2Controller opponent;
 
     void Start()
     {
@@ -57,7 +57,7 @@ public class Player1Controller : MonoBehaviour
             animate.SetBool("Walk_Back", false);
         }
 
-        if(Input.GetAxis("Vertical") < -0.1)
+        if (Input.GetAxis("Vertical2") < -0.1)
         {
             animate.SetBool("Crouch", true);
         }
@@ -66,20 +66,20 @@ public class Player1Controller : MonoBehaviour
             animate.SetBool("Crouch", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             animate.SetTrigger("Jump");
             Debug.Log("Jump works");
 
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             animate.SetTrigger("Punch");
             Debug.Log("Punch works");
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             animate.SetBool("Block", true);
             Debug.Log("Block works");
@@ -92,7 +92,7 @@ public class Player1Controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        direction = Input.GetAxis("Horizontal");
+        direction = Input.GetAxis("Horizontal2");
         moveVelocity = speed * direction * Time.deltaTime;
         myBody.velocity = new Vector3(0, GetComponent<Rigidbody>().velocity.y, moveVelocity);
 
@@ -114,7 +114,7 @@ public class Player1Controller : MonoBehaviour
 
         //animate.SetFloat("velocityX", moveVelocity);
         //animate.SetFloat("velocityY", moveVelocity);
-        
+
     }
 
     public bool Attacking
