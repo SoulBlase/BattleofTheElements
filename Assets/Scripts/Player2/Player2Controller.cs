@@ -27,6 +27,10 @@ public class Player2Controller : MonoBehaviour
 
     public DamageTaken playerHealth;
 
+    //public PlayController opponent;
+    public string inputVert;
+    public string inputHori;
+
     public Player2Controller opponent;
 
     void Start()
@@ -57,7 +61,7 @@ public class Player2Controller : MonoBehaviour
             animate.SetBool("Walk_Back", false);
         }
 
-        if (Input.GetAxis("Vertical2") < -0.1)
+        if (Input.GetAxis(inputVert) < -0.1)
         {
             animate.SetBool("Crouch", true);
         }
@@ -92,7 +96,7 @@ public class Player2Controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        direction = Input.GetAxis("Horizontal2");
+        direction = Input.GetAxis(inputHori);
         moveVelocity = speed * direction * Time.deltaTime;
         myBody.velocity = new Vector3(0, GetComponent<Rigidbody>().velocity.y, moveVelocity);
 
