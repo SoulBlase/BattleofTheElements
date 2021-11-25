@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class DamageTaken : MonoBehaviour
 {
-    //Player 1
-    public static float HealthP1;
-    public static float maxHealthP1 = 100f;
+    //Players Health
+    public float Health;
+    public float maxHealth = 100f;
 
-    //Player 2
-    public static float HealthP2;
-    public static float maxHealthP2 = 100f;
 
     //[RequireComponent(typeof(Animator))]
 
@@ -18,8 +15,7 @@ public class DamageTaken : MonoBehaviour
 
     void Start()
     {
-        HealthP1 = maxHealthP1;
-        HealthP2 = maxHealthP2;
+        Health = maxHealth;
     }
 
     void Update()
@@ -32,34 +28,26 @@ public class DamageTaken : MonoBehaviour
     {
         get
         {
-          return HealthP1 / maxHealthP1;
+          return Health / maxHealth;
         }
     }
 
     public virtual void hurt(float damage)
     {
-        if(HealthP1 >= damage)
+        if(Health >= damage)
         {
-            HealthP1 -= damage;
+            Health -= damage;
         }
         else
         {
-            HealthP1 = 0;
+            Health = 0;
         }
 
-        if(HealthP1 > 0)
+        if(Health > 0)
         {
             Animator a = GetComponent<Animator>();
             a.SetTrigger("Hit");
         }
 
-        if (HealthP2 >= damage)
-        {
-            HealthP2 -= damage;
-        }
-        else
-        {
-            HealthP2 = 0;
-        }
     }
 }

@@ -35,39 +35,39 @@ public class AttackBoxes : MonoBehaviour
 
     void OnTriggerEnter(Collider HitCol)
     {
-
+        /*
         if(HitCol.gameObject.tag == "P1 Head Hitboxes" && Blocking == false)
         {
-            DamageTaken.HealthP1 -= HeadHealthDamage;
-            Debug.Log("Player 1: " + DamageTaken.HealthP1);
+            DamageTaken.Health -= HeadHealthDamage;
+            Debug.Log("Player 1: " + DamageTaken.Health);
         } 
         else if(HitCol.gameObject.tag == "P1 Torso Hitboxes" && Blocking == false)
         {
-            DamageTaken.HealthP1 -= TorsoHealthDamage;
-            Debug.Log("Player 1: " + DamageTaken.HealthP1);
+            DamageTaken.Health -= TorsoHealthDamage;
+            Debug.Log("Player 1: " + DamageTaken.Health);
         }
         else if(HitCol.gameObject.tag == "P1 Legs Hitboxes" && Blocking == false)
         {
-            DamageTaken.HealthP1 -= LegsHealthDamage;
-            Debug.Log("Player 1: " + DamageTaken.HealthP1);
+            DamageTaken.Health -= LegsHealthDamage;
+            Debug.Log("Player 1: " + DamageTaken.Health);
         }
 
         if(HitCol.gameObject.tag == "P2 Head Hitboxes" && Blocking == false)
         {
-            DamageTaken.HealthP2 -= HeadHealthDamage;
-            Debug.Log("Player 2: " + DamageTaken.HealthP2);
+            DamageTaken.Health -= HeadHealthDamage;
+            Debug.Log("Player 2: " + DamageTaken.Health);
         }
         else if(HitCol.gameObject.tag == "P2 Torso Hitboxes" && Blocking == false)
         {
-            DamageTaken.HealthP2 -= TorsoHealthDamage;
-            Debug.Log("Player 2: " + DamageTaken.HealthP2);
+            DamageTaken.Health -= TorsoHealthDamage;
+            Debug.Log("Player 2: " + DamageTaken.Health);
         }
         else if(HitCol.gameObject.tag == "P2 Legs Hitboxes" && Blocking == false)
         {
-            DamageTaken.HealthP2 -= LegsHealthDamage;
-            Debug.Log("Player 2: " + DamageTaken.HealthP2);
+            DamageTaken.Health -= LegsHealthDamage;
+            Debug.Log("Player 2: " + DamageTaken.Health);
         }
-
+        */
 
 
         /*

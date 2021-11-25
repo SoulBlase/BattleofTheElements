@@ -585,7 +585,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 60089006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1449a36a81b567142bf865c3b96f9999, type: 3}
+  m_Script: {fileID: 11500000, guid: 8de2b07bf1da11647ab6b6cf388780eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
@@ -594,7 +594,9 @@ MonoBehaviour:
   fighterName: Blaze
   character: 0
   currentState: 0
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 1277188882}
+  inputVert: Vertical2
+  inputHori: Horizontal2
   opponent: {fileID: 0}
 --- !u!1 &89823493
 GameObject:
@@ -13815,7 +13817,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1546929663}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e1bc6d55f0f6be4db3775ebfe07461f, type: 3}
+  m_Script: {fileID: 11500000, guid: 8de2b07bf1da11647ab6b6cf388780eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
@@ -13824,7 +13826,9 @@ MonoBehaviour:
   fighterName: Blaze
   character: 0
   currentState: 0
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 1277188882}
+  inputVert: Vertical
+  inputHori: Horizontal
   opponent: {fileID: 0}
 --- !u!1 &1570391819 stripped
 GameObject:
