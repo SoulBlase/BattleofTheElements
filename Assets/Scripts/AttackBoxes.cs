@@ -38,8 +38,8 @@ public class AttackBoxes : MonoBehaviour
         /*
         if(HitCol.gameObject.tag == "P1 Head Hitboxes" && Blocking == false)
         {
-            DamageTaken.Health -= HeadHealthDamage;
-            Debug.Log("Player 1: " + DamageTaken.Health);
+            StatusBars.healthValue -= HeadHealthDamage;
+            Debug.Log("Player 1: " + StatusBars.healthValue);
         } 
         else if(HitCol.gameObject.tag == "P1 Torso Hitboxes" && Blocking == false)
         {
