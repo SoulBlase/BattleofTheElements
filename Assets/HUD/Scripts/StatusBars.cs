@@ -9,35 +9,37 @@ public class StatusBars : MonoBehaviour
 
     public Image hpBarIndicator;
     public Image hpBarActual;
-    public Image mpBar;
+    //public Image mpBar;
 
-    public TMP_InputField input;
+    //public TMP_InputField input;
 
     public TextMeshProUGUI characterName;
 
-    public int healthValue;
+    public float healthValue;
     private float healthValueActual;
-    public int manaValue;
+    //public int manaValue;
 
-    public int maxHP = 75;
-    public int maxMP = 23;
+    public float maxHP = 75;
+    //public int maxMP = 23;
 
-    public float hpChangeMultiplier = 3;
+    //public float hpChangeMultiplier = 3;
 
     private void Start()
     {
         healthValue = maxHP;
         healthValueActual = maxHP;
-        manaValue = maxMP;
+        //manaValue = maxMP;
     }
 
-    public void AdjustHealth(int value)
+    public void AdjustHealth(float value)
     {
+
         if (healthValue + value <= maxHP)
         {
             if (healthValue + value >= 0)
             {
                 healthValue += value;
+                print("Health: " + healthValue);
             }
             else
             {
@@ -45,10 +47,12 @@ public class StatusBars : MonoBehaviour
             }
 
         }
+    
 
         if (value < 0)
         {
             StopAllCoroutines();
+
             StartCoroutine(AdjustHealthActual());
 
         }
@@ -58,6 +62,9 @@ public class StatusBars : MonoBehaviour
         }
 
     }
+
+    /*
+
     public void AdjustMana(int value)
     {
         if (manaValue + value <= maxMP)
@@ -72,45 +79,23 @@ public class StatusBars : MonoBehaviour
             }
 
         }
-    }
+    } */
 
-    public void ChangeCharacterName()
-    {
-        string _name = input.text;
-        characterName.text = _name.ToUpper();
-    }
+
 
     private void Update()
     {
-        float hpFloat = healthValue;
-        float mpFloat = manaValue;
+
+        //float mpFloat = manaValue;
+
   
 
-        hpBarIndicator.fillAmount = UtilScript.RemapRange(hpFloat, 0, maxHP, 0, 1);
+        hpBarIndicator.fillAmount = UtilScript.RemapRange(healthValue, 0, maxHP, 0, 1);
         hpBarActual.fillAmount = UtilScript.RemapRange(healthValueActual, 0, maxHP, 0, 1);
 
-        mpBar.fillAmount = UtilScript.RemapRange(mpFloat, 0, maxMP, 0, 1);
+        //mpBar.fillAmount = UtilScript.RemapRange(mpFloat, 0, maxMP, 0, 1);
 
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            int num = Random.Range(1, (maxHP / 4));
-            AdjustHealth(-num);
-        }
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            int num = Random.Range(1, (maxHP / 4));
-            AdjustHealth(num);
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            int num = Random.Range(1, (maxMP / 4));
-            AdjustMana(num);
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            int num = Random.Range(1, (maxMP / 4));
-            AdjustMana(-num);
-        }
+        
     }
 
     public IEnumerator AdjustHealthActual()
@@ -122,6 +107,7 @@ public class StatusBars : MonoBehaviour
 
         while (elapsedTime < duration)
         {
+            //print("Damage Actual");
             healthValueActual = Mathf.Lerp(startValue, healthValue, elapsedTime/duration);
             elapsedTime += Time.deltaTime;
             yield return null;

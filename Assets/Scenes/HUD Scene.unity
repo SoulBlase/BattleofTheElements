@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 869715966}
-  m_IndirectSpecularColor: {r: 0.042174395, g: 0.0048932466, b: 0.0014694673, a: 1}
+  m_IndirectSpecularColor: {r: 0.091919266, g: 0.005016315, b: 0.005016315, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -145,7 +145,7 @@ MonoBehaviour:
   LegsHealthDamage: 10
   punchName: 
   damage: 0
-  owner: {fileID: 0}
+  HealthP2: {fileID: 0}
 --- !u!1 &12762971
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,6 +535,7 @@ GameObject:
   - component: {fileID: 60089007}
   - component: {fileID: 60089009}
   - component: {fileID: 60089008}
+  - component: {fileID: 60089010}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Untagged
@@ -595,7 +596,26 @@ MonoBehaviour:
   character: 0
   currentState: 0
   playerHealth: {fileID: 0}
+  inputVert: 
+  inputHori: 
   opponent: {fileID: 0}
+--- !u!114 &60089010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60089006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec0395e4002f9e45be2300f8ccad933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpBarIndicator: {fileID: 3513981186015446198}
+  hpBarActual: {fileID: 3513981184668120390}
+  characterName: {fileID: 3513981185680882946}
+  healthValue: 0
+  maxHP: 100
 --- !u!1 &89823493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,7 +1257,7 @@ MonoBehaviour:
   LegsHealthDamage: 10
   punchName: 
   damage: 0
-  owner: {fileID: 0}
+  HealthP2: {fileID: 0}
 --- !u!1 &366110850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,7 +1389,7 @@ MonoBehaviour:
   LegsHealthDamage: 10
   punchName: 
   damage: 0
-  owner: {fileID: 0}
+  HealthP2: {fileID: 0}
 --- !u!1 &453620730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1712,7 +1732,7 @@ MonoBehaviour:
   LegsHealthDamage: 10
   punchName: 
   damage: 0
-  owner: {fileID: 0}
+  HealthP2: {fileID: 0}
 --- !u!50 &577096734
 Rigidbody2D:
   serializedVersion: 4
@@ -1810,7 +1830,7 @@ MonoBehaviour:
   LegsHealthDamage: 10
   punchName: 
   damage: 0
-  owner: {fileID: 0}
+  HealthP2: {fileID: 0}
 --- !u!50 &634032498
 Rigidbody2D:
   serializedVersion: 4
@@ -2338,7 +2358,7 @@ MonoBehaviour:
   LegsHealthDamage: 10
   punchName: 
   damage: 0
-  owner: {fileID: 0}
+  HealthP2: {fileID: 0}
 --- !u!50 &756696043
 Rigidbody2D:
   serializedVersion: 4
@@ -7420,7 +7440,7 @@ MonoBehaviour:
   LegsHealthDamage: 10
   punchName: 
   damage: 0
-  owner: {fileID: 0}
+  HealthP2: {fileID: 0}
 --- !u!50 &846327003
 Rigidbody2D:
   serializedVersion: 4
@@ -12573,7 +12593,7 @@ MonoBehaviour:
   LegsHealthDamage: 10
   punchName: 
   damage: 0
-  owner: {fileID: 0}
+  HealthP2: {fileID: 0}
 --- !u!50 &904880873
 Rigidbody2D:
   serializedVersion: 4
@@ -13239,11 +13259,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277188880}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2a0585594ae41b41abc3891102c94c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 0
+  maxHealth: 100
 --- !u!1 &1313018570
 GameObject:
   m_ObjectHideFlags: 0
@@ -13368,9 +13390,13 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1493284535790598427, guid: 2c71af2f84c9c3c4b86a12643f426bf4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1493284536100172620, guid: 2c71af2f84c9c3c4b86a12643f426bf4, type: 3}
       propertyPath: m_Name
-      value: HUD
+      value: HUDP1
       objectReference: {fileID: 0}
     - target: {fileID: 1493284536100172621, guid: 2c71af2f84c9c3c4b86a12643f426bf4, type: 3}
       propertyPath: m_Pivot.x
@@ -13494,14 +13520,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1493284537126952380, guid: 2c71af2f84c9c3c4b86a12643f426bf4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 28.28
       objectReference: {fileID: 0}
     - target: {fileID: 1493284537126952380, guid: 2c71af2f84c9c3c4b86a12643f426bf4, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 21.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493284537126952383, guid: 2c71af2f84c9c3c4b86a12643f426bf4, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1493284536100172608, guid: 2c71af2f84c9c3c4b86a12643f426bf4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c71af2f84c9c3c4b86a12643f426bf4, type: 3}
+--- !u!114 &1327896687 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1493284536963779077, guid: 2c71af2f84c9c3c4b86a12643f426bf4, type: 3}
+  m_PrefabInstance: {fileID: 1327896686}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1327896688 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1493284536759992897, guid: 2c71af2f84c9c3c4b86a12643f426bf4, type: 3}
+  m_PrefabInstance: {fileID: 1327896686}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1327896689 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1493284535423349681, guid: 2c71af2f84c9c3c4b86a12643f426bf4, type: 3}
+  m_PrefabInstance: {fileID: 1327896686}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1351819921
 GameObject:
   m_ObjectHideFlags: 0
@@ -14024,6 +14088,7 @@ GameObject:
   - component: {fileID: 1546929664}
   - component: {fileID: 1546929666}
   - component: {fileID: 1546929665}
+  - component: {fileID: 1546929667}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -14060,7 +14125,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 114
@@ -14085,6 +14150,23 @@ MonoBehaviour:
   currentState: 0
   playerHealth: {fileID: 0}
   opponent: {fileID: 0}
+--- !u!114 &1546929667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546929663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec0395e4002f9e45be2300f8ccad933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpBarIndicator: {fileID: 1327896689}
+  hpBarActual: {fileID: 1327896688}
+  characterName: {fileID: 1327896687}
+  healthValue: 0
+  maxHP: 100
 --- !u!1 &1570391819 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4669699080246392017, guid: 0a93d57ae81a081448ba9e7b1515b649, type: 3}
@@ -14107,7 +14189,7 @@ MonoBehaviour:
   LegsHealthDamage: 10
   punchName: 
   damage: 0
-  owner: {fileID: 0}
+  HealthP2: {fileID: 0}
 --- !u!1 &1588506491
 GameObject:
   m_ObjectHideFlags: 0
@@ -19471,7 +19553,7 @@ MonoBehaviour:
   LegsHealthDamage: 10
   punchName: 
   damage: 0
-  owner: {fileID: 0}
+  HealthP2: {fileID: 0}
 --- !u!1 &1863055131
 GameObject:
   m_ObjectHideFlags: 0
@@ -19522,7 +19604,7 @@ MonoBehaviour:
   LegsHealthDamage: 10
   punchName: 
   damage: 0
-  owner: {fileID: 0}
+  HealthP2: {fileID: 0}
 --- !u!50 &1863055134
 Rigidbody2D:
   serializedVersion: 4
@@ -19584,15 +19666,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1909144661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: becdaadf1ec3ba04e8cdcb1034472675, type: 3}
+  m_Script: {fileID: 11500000, guid: 50ae43eccbb41b746bf978a893f12660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeadHealthDamage: 30
-  TorsoHealthDamage: 20
+  HeadHealthDamage: 10
+  TorsoHealthDamage: 10
   LegsHealthDamage: 10
   punchName: 
   damage: 0
-  owner: {fileID: 0}
+  HealthP1: {fileID: 1546929667}
 --- !u!1 &1913389637
 GameObject:
   m_ObjectHideFlags: 0
@@ -19668,7 +19750,7 @@ MonoBehaviour:
   LegsHealthDamage: 10
   punchName: 
   damage: 0
-  owner: {fileID: 0}
+  HealthP2: {fileID: 0}
 --- !u!1 &2038515426
 GameObject:
   m_ObjectHideFlags: 0
@@ -20367,7 +20449,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3513981185307732666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20399,7 +20481,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -19.163696, y: -12.123974}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 28.28, y: 21.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3513981185422769768
 CanvasRenderer:
@@ -21070,7 +21152,7 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3513981186411119687}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StatusBars, Assembly-CSharp
         m_MethodName: ChangeCharacterName
         m_Mode: 1
@@ -21566,28 +21648,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &3513981186411119687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3513981186411119691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bec0395e4002f9e45be2300f8ccad933, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hpBarIndicator: {fileID: 3513981186015446198}
-  hpBarActual: {fileID: 3513981184668120390}
-  mpBar: {fileID: 3513981186074316340}
-  input: {fileID: 3513981186191047857}
-  characterName: {fileID: 3513981185680882946}
-  healthValue: 0
-  manaValue: 0
-  maxHP: 150
-  maxMP: 95
-  hpChangeMultiplier: 3
 --- !u!224 &3513981186411119690
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21622,9 +21682,8 @@ GameObject:
   - component: {fileID: 3513981186411119690}
   - component: {fileID: 3513981186411119684}
   - component: {fileID: 3513981186411119685}
-  - component: {fileID: 3513981186411119687}
   m_Layer: 5
-  m_Name: HUD (1)
+  m_Name: HUDP2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21707,7 +21766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3513981186651491870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22086,7 +22145,7 @@ MonoBehaviour:
   LegsHealthDamage: 10
   punchName: 
   damage: 0
-  owner: {fileID: 0}
+  HealthP2: {fileID: 0}
 --- !u!114 &4669699080541333027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22104,7 +22163,7 @@ MonoBehaviour:
   LegsHealthDamage: 10
   punchName: 
   damage: 0
-  owner: {fileID: 0}
+  HealthP2: {fileID: 0}
 --- !u!114 &4669699080541333028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22122,4 +22181,4 @@ MonoBehaviour:
   LegsHealthDamage: 10
   punchName: 
   damage: 0
-  owner: {fileID: 0}
+  HealthP2: {fileID: 60089010}

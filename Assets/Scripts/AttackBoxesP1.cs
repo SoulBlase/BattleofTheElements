@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackBoxes : MonoBehaviour
+public class AttackBoxesP1 : MonoBehaviour
 {
     [Header("Health Damage")]
     [Range(0f, 100f)]
@@ -17,8 +17,12 @@ public class AttackBoxes : MonoBehaviour
 
     public string punchName;
     public float damage;
-    
-    public Player1Controller owner;
+
+    //public StatusBars HealthP1;
+    public StatusBars HealthP2;
+
+
+    //public Player1Controller owner;
 
     void Start()
     {
@@ -35,39 +39,40 @@ public class AttackBoxes : MonoBehaviour
 
     void OnTriggerEnter(Collider HitCol)
     {
-        /*
+      /*  
         if(HitCol.gameObject.tag == "P1 Head Hitboxes" && Blocking == false)
         {
-            StatusBars.healthValue -= HeadHealthDamage;
-            Debug.Log("Player 1: " + StatusBars.healthValue);
-        } 
+            HealthP1.healthValue -= HeadHealthDamage;
+            Debug.Log("Player 1: " + HealthP1.healthValue);
+        }
         else if(HitCol.gameObject.tag == "P1 Torso Hitboxes" && Blocking == false)
         {
-            DamageTaken.Health -= TorsoHealthDamage;
-            Debug.Log("Player 1: " + DamageTaken.Health);
+            HealthP1.healthValue -= TorsoHealthDamage;
+            Debug.Log("Player 1: " + HealthP1.healthValue);
         }
         else if(HitCol.gameObject.tag == "P1 Legs Hitboxes" && Blocking == false)
         {
-            DamageTaken.Health -= LegsHealthDamage;
-            Debug.Log("Player 1: " + DamageTaken.Health);
+            HealthP1.healthValue -= LegsHealthDamage;
+            Debug.Log("Player 1: " + HealthP1.healthValue);
         }
+        */
 
         if(HitCol.gameObject.tag == "P2 Head Hitboxes" && Blocking == false)
         {
-            DamageTaken.Health -= HeadHealthDamage;
-            Debug.Log("Player 2: " + DamageTaken.Health);
+            HealthP2.AdjustHealth(-HeadHealthDamage);
+            Debug.Log("Player 2: " + HealthP2.healthValue);
         }
         else if(HitCol.gameObject.tag == "P2 Torso Hitboxes" && Blocking == false)
         {
-            DamageTaken.Health -= TorsoHealthDamage;
-            Debug.Log("Player 2: " + DamageTaken.Health);
+            HealthP2.AdjustHealth(-HeadHealthDamage);
+            Debug.Log("Player 2: " + HealthP2.healthValue);
         }
         else if(HitCol.gameObject.tag == "P2 Legs Hitboxes" && Blocking == false)
         {
-            DamageTaken.Health -= LegsHealthDamage;
-            Debug.Log("Player 2: " + DamageTaken.Health);
+            HealthP2.AdjustHealth(-HeadHealthDamage);
+            Debug.Log("Player 2: " + HealthP2.healthValue);
         }
-        */
+        
 
 
         /*

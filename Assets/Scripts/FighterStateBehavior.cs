@@ -17,7 +17,7 @@ public class FighterStateBehavior : StateMachineBehaviour
         if(fighter == null)
         {
             fighter = animator.gameObject.GetComponentInParent<Player1Controller>();
-            Debug.Log(fighter.name);
+            //Debug.Log(fighter.name);
         }
 
         fighter.currentState = behaviorState;
