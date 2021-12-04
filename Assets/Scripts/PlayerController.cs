@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     public PlayerType character;
     public FighterStates currentState = FighterStates.Idle;
 
+    public KeyCode[] attackKey;
+
     private Rigidbody myBody;
     protected Animator animate;
 
@@ -90,10 +92,16 @@ public class PlayerController : MonoBehaviour
              }
         }
        
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(attackKey[0]))
         {
             animate.SetTrigger("Punch");
             Debug.Log("Punch works");
+        }
+
+        if (Input.GetKeyDown(attackKey[1]))
+        {
+            animate.SetTrigger("Kick");
+            Debug.Log("Kick works");
         }
 
         if (Input.GetKeyDown(KeyCode.M))
